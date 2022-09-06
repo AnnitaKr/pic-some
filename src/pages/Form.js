@@ -41,7 +41,7 @@ export default function Form() {
        
         <form className="payment-form">
         <h2 className="desc">Fill out this form to get you favorite items sent to you.</h2>
-            <input
+            <input 
                 id="firstName"
                 type="text"
                 placeholder="First Name"

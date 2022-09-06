@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react"
+import React, {useContext} from "react"
 import {Context} from "../Context"
 import FavItem from "../components/FavItem"
 
@@ -16,7 +16,7 @@ function Favorites() {
             <h1>Your Favorites</h1>
 
             {favItems.length > 0 ? <p></p> : <p>You have no items in your favourites.</p>}
-            
+
             <div className="grid-fav">
             {favItemElements}
             </div>

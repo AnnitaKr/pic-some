@@ -99,8 +99,10 @@ div.order-button > button:disabled {
 }
 
 .thank-you-message {
-  color: var(--pink);
-  font-size: 40px;
+  color: var(--black);
+  font-size: 30px;
+  max-width: 60%;
+  margin: 200px auto;
 }
 
 .cart-item img {
@@ -197,3 +199,69 @@ a {
 a:visited { color: var(--light-blue); }
 a:hover { color: var(--light-blue); }
 a:active { color: var(--light-blue); }
+
+.payment-form {
+  display: grid;
+  grid-template: repeat(6, 40px) 20px / 300px 300px;
+  grid-gap: 20px;
+  grid-template-areas: 
+          "desc desc"
+          "firstName lastName"
+          "email mobile"
+          "address address"
+          "terms terms"
+          "button button"
+          "small-txt small-txt";
+  justify-content: center;
+  background-color: var(--light-blue);
+  max-width: 60%;
+  padding: 50px 10px;
+  margin: 100px auto;
+  box-shadow: 1px 1px 5px rgb(178, 213, 219);
+}
+
+#firstName {
+  grid-area: firstName;
+}
+
+#lastName {
+  grid-area: lastName;
+}
+
+#email {
+  grid-area: email;
+}
+
+#mobile {
+  grid-area: mobile;
+}
+
+#address {
+  grid-area: address;
+}
+
+#terms {
+  grid-area: terms;
+}
+
+.form-btn {
+  grid-area: button;
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  justify-self: center;
+}
+
+.desc {
+  grid-area: desc;
+  margin: 5px auto;
+}
+
+.small-text {
+  grid-area: small-txt;
+  justify-self: center;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+

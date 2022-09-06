@@ -1,11 +1,10 @@
-import React, {useState, useContext} from "react"
+import React, {useContext} from "react"
 import {Context} from "../Context"
 import CartItem from "../components/CartItem"
+import {Link} from "react-router-dom"
 
 function Cart() {
-    const [buttonText, setButtonText] = useState("Place Order")
-    const [justPlacedOrder, setJustPlacedOrder] = useState(false)
-    const {cartItems, emptyCart} = useContext(Context)
+    const {cartItems} = useContext(Context)
     const totalCost = 5.99 * cartItems.length
     const totalCostDisplay = totalCost.toLocaleString("en-US", {style: "currency", currency: "USD"})
     
@@ -13,15 +12,6 @@ function Cart() {
         <CartItem key={item.id} item={item} />
     ))  
     
-    function placeOrder() {
-        setButtonText("Ordering...")
-        setTimeout(() => {
-            console.log("Order placed!")
-            setButtonText("Place Order")
-            setJustPlacedOrder(true)
-            emptyCart()
-        }, 3000)
-    }
     
     return (
         <main className="cart-page">
@@ -31,15 +21,11 @@ function Cart() {
             {
                 cartItems.length > 0 ?
                 <div className="order-button">
-                    <button onClick={placeOrder}>{buttonText}</button>
+                   <Link to="/cart/form"><button>Place Order</button></Link>
                 </div> :
                 <p>You have no items in your cart.</p>
             }
-            { justPlacedOrder ? <h2 className="thank-you-message">
-                Thank you for your purchase! 
-                It is on its way to you.</h2> : <p> </p>
-
-            }
+           
         </main>
     )
 }

@@ -22,7 +22,7 @@ function FavItem({item}) {
             >
             </i>
             
-            <img src={item.url} width="130px" />
+            <img src={item.url} width="130px" alt={item.url} />
             <button className="small-btn" onClick={() => cartNotFave(item, item.id)}>Add to cart</button>
            
         </div>

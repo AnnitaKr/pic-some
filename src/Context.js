@@ -11,6 +11,7 @@ function ContextProvider({children}) {
         fetch(url)
             .then(res => res.json())
             .then(data => setAllPhotos(data))
+            .catch(error => <p>Sorry, couldn't load. {error}</p>)
     }, [])
     
     function toggleFavorite(id) {
@@ -28,7 +29,7 @@ function ContextProvider({children}) {
 
 
     function removeFromFavs(id) {
-        setFavItems(prevItems => prevItems.filter(item => item.id != id))
+        setFavItems(prevItems => prevItems.filter(item => item.id !== id))
         toggleFavorite(id)
     }
     

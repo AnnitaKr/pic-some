@@ -14,8 +14,12 @@ function Favorites() {
     return (
         <main className="favorites">
             <h1>Your Favorites</h1>
+
             {favItems.length > 0 ? <p></p> : <p>You have no items in your favourites.</p>}
+            
+            <div className="grid-fav">
             {favItemElements}
+            </div>
         </main>
     )
 }

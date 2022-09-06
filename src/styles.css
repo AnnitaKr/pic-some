@@ -39,11 +39,16 @@ main.favorites {
 .fav-item {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .fav-item > img {
   margin: 10px;
+}
+
+.grid-fav {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
 }
 
 .cart-page > h1 {
@@ -78,6 +83,11 @@ button:hover {
 
 div.order-button > button:disabled {
   border-color: lightgray;
+}
+
+.small-btn {
+  font-size: small;
+  padding: 10px;
 }
 
 .cart-item {
